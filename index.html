@@ -5,62 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Gato - GB vs GN</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      background: url('Fondo.png') no-repeat center center fixed;
-      background-size: cover;
-      margin: 0;
-      font-family: sans-serif;
-    }
-
-    .game-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .board {
-      display: grid;
-      grid-template-columns: repeat(3, 100px);
-      grid-template-rows: repeat(3, 100px);
-      gap: 5px;
-      margin: 20px 0;
-    }
-
-    .cell {
-      width: 100px;
-      height: 100px;
-      background-color: rgba(255, 255, 255, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      cursor: pointer;
-    }
-
-    .cell.gb {
-      background: url('GB.jpeg') center center/cover no-repeat;
-    }
-
-    .cell.gn {
-      background: url('GN.jpeg') center center/cover no-repeat;
-    }
-
-    .controls {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn {
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-  </style>
 </head>
 <body>
   <main class="game-wrapper">
