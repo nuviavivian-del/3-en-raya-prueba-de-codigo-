@@ -6,11 +6,13 @@ const resetBtn = document.getElementById('resetBtn');
 let currentPlayer = 'GB'; // GB = jugador, GN = PC
 let gameState = Array(9).fill(null);
 
+// Rutas correctas de las imágenes
 const images = {
   GB: 'imagenes/GB.jpeg', // gato blanco
   GN: 'imagenes/GN.jpeg'  // gato negro
 };
 
+// Verifica si hay un ganador o empate
 function checkWinner() {
   const winPatterns = [
     [0,1,2],[3,4,5],[6,7,8],
@@ -27,6 +29,7 @@ function checkWinner() {
   return gameState.includes(null) ? null : 'Empate';
 }
 
+// Renderiza una celda con la imagen correspondiente
 function renderCell(index) {
   const cell = cells[index];
   cell.innerHTML = '';
@@ -40,6 +43,7 @@ function renderCell(index) {
   }
 }
 
+// Realiza un movimiento
 function makeMove(index) {
   if (gameState[index] || checkWinner()) return;
 
@@ -63,12 +67,14 @@ function makeMove(index) {
   }
 }
 
+// Eventos de clic en celdas
 cells.forEach((cell, index) => {
   cell.addEventListener('click', () => {
     if (currentPlayer === 'GB') makeMove(index);
   });
 });
 
+// Reiniciar juego
 resetBtn.addEventListener('click', () => {
   gameState = Array(9).fill(null);
   cells.forEach(cell => cell.innerHTML = '');
