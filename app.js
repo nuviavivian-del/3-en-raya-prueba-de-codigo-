@@ -13,9 +13,9 @@ const images = {
 
 function checkWinner() {
   const winPatterns = [
-    [0,1,2],[3,4,5],[6,7,8], // filas
-    [0,3,6],[1,4,7],[2,5,8], // columnas
-    [0,4,8],[2,4,6]          // diagonales
+    [0,1,2],[3,4,5],[6,7,8],
+    [0,3,6],[1,4,7],[2,5,8],
+    [0,4,8],[2,4,6]
   ];
   
   for (let pattern of winPatterns) {
@@ -29,7 +29,7 @@ function checkWinner() {
 
 function renderCell(index) {
   const cell = cells[index];
-  cell.innerHTML = ''; // limpia antes de poner imagen
+  cell.innerHTML = '';
   if (gameState[index]) {
     const img = document.createElement('img');
     img.src = images[gameState[index]];
@@ -55,7 +55,7 @@ function makeMove(index) {
   currentPlayer = currentPlayer === 'GB' ? 'GN' : 'GB';
   status.textContent = `Turno: ${currentPlayer === 'GB' ? 'GB (tú)' : 'GN (PC)'}`;
 
-  // Movimiento PC automático si es su turno
+  // Movimiento automático del PC
   if (currentPlayer === 'GN') {
     const emptyCells = gameState.map((v,i) => v===null ? i : null).filter(v => v!==null);
     const pcMove = emptyCells[Math.floor(Math.random() * emptyCells.length)];
