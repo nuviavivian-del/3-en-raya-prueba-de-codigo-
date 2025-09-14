@@ -12,6 +12,7 @@ const images = {
   GN: 'IMAGENES/GN.jpeg'  // gato negro
 };
 
+
 // Verifica si hay un ganador o empate
 function checkWinner() {
   const winPatterns = [
