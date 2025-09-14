@@ -8,8 +8,8 @@ let gameState = Array(9).fill(null);
 
 // Rutas correctas de las imágenes
 const images = {
-  GB: 'imagenes/GB.jpeg', // gato blanco
-  GN: 'imagenes/GN.jpeg'  // gato negro
+  GB: 'IMAGENES/GB.jpeg', // gato blanco
+  GN: 'IMAGENES/GN.jpeg'  // gato negro
 };
 
 // Verifica si hay un ganador o empate
