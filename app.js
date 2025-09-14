@@ -7,8 +7,8 @@ let currentPlayer = 'GB'; // GB = jugador, GN = PC
 let gameState = Array(9).fill(null);
 
 const images = {
-  GB: 'images/GB.jpeg', // gato blanco
-  GN: 'images/GN.jpeg'  // gato negro
+  GB: 'imagenes/GB.jpeg', // gato blanco
+  GN: 'imagenes/GN.jpeg'  // gato negro
 };
 
 function checkWinner() {
