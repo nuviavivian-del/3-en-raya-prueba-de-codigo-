@@ -1,33 +1,50 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gato - GB vs GN</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main class="game-wrapper">
-    <h1 class="title">Gato - GB (tú) vs GN (PC)</h1>
+/* Reset y fuente */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: url('IMAGENES/fondo.png') no-repeat center center fixed;
+  background-size: cover;
+}
 
-    <div id="board" class="board" role="grid" aria-label="Tablero de gato">
-      <div class="cell" data-index="0"></div>
-      <div class="cell" data-index="1"></div>
-      <div class="cell" data-index="2"></div>
-      <div class="cell" data-index="3"></div>
-      <div class="cell" data-index="4"></div>
-      <div class="cell" data-index="5"></div>
-      <div class="cell" data-index="6"></div>
-      <div class="cell" data-index="7"></div>
-      <div class="cell" data-index="8"></div>
-    </div>
+/* Contenedor principal */
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
 
-    <div class="controls">
-      <div id="status" class="status">Turno: GB (tú)</div>
-      <button id="resetBtn" class="btn">Reiniciar</button>
-    </div>
-  </main>
+/* Tablero de 3 en línea */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin: 20px 0;
+}
 
-  <script src="app.js"></script>
-</body>
-</html>
+/* Cada celda */
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Controles (estado y botón reiniciar) */
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  cursor: pointer;
+}
