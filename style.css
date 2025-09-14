@@ -1,0 +1,91 @@
+/* style.css - guarda en la raíz del proyecto o donde lo tengas */
+
+:root{
+  --board-size: 360px;
+  --gap: 12px;
+  --cell-bg: rgba(255,255,255,0.75);
+}
+
+html,body{
+  height:100%;
+  margin:0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+
+/* fondo general usando tu imagen 'fondo.png' */
+body{
+  background-image: url("images/fondo.png");
+  background-size: cover;
+  background-position: center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.game-wrapper{
+  background: rgba(255,255,255,0.85);
+  padding:18px;
+  border-radius:14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+  text-align:center;
+}
+
+.title{
+  margin:0 0 12px 0;
+  font-size:20px;
+  color:#333;
+}
+
+.board{
+  width:var(--board-size);
+  height:var(--board-size);
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: var(--gap);
+  margin: 0 auto 14px;
+  padding:12px;
+  background: rgba(255,255,255,0.15);
+  border-radius:10px;
+  box-sizing:border-box;
+}
+
+/* celdas */
+.cell{
+  background: var(--cell-bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  cursor: pointer;
+  user-select:none;
+  transition: transform .08s ease, box-shadow .08s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+.cell:active{ transform: scale(.98); }
+
+.cell img{
+  max-width:80%;
+  max-height:80%;
+  pointer-events: none;
+}
+
+/* estado y botón */
+.controls{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:center;
+}
+.status{ font-weight:600; color:#222; }
+.btn{
+  padding:8px 12px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  background:#2b90ff;
+  color:white;
+  font-weight:600;
+}
+.btn:hover{ filter:brightness(.95); }
